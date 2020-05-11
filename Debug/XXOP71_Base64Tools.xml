@@ -1,0 +1,59 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+XXOP71_Base64Tools
+</name>
+</assembly>
+<members>
+<member name="M:XXOP71_Base64Tools.CFrmRoot.pp_btn1_Click(System.Object,System.EventArgs)">
+	<summary>
+ Texts to encoding
+ </summary>
+	<param name="tsd"></param>
+	<param name="tea"></param>
+	<remarks></remarks>
+</member><member name="M:XXOP71_Base64Tools.CFrmRoot.pp_btn2_Click(System.Object,System.EventArgs)">
+	<summary>
+ Texts to decoding
+ </summary>
+	<param name="tsd"></param>
+	<param name="tea"></param>
+	<remarks></remarks>
+</member><member name="M:XXOP71_Base64Tools.CFrmRoot.pp_btn3_Click(System.Object,System.EventArgs)">
+	<summary>
+ Forms Clear
+ </summary>
+	<param name="tsd"></param>
+	<param name="tea"></param>
+	<remarks></remarks>
+</member><member name="M:XXOP71_Base64Tools.CFrmRoot.pp_btn4_Click(System.Object,System.EventArgs)">
+	<summary>
+ Texts Paste
+ </summary>
+	<param name="tsd"></param>
+	<param name="tea"></param>
+	<remarks></remarks>
+</member><member name="M:XXOP71_Base64Tools.CFrmRoot.pp_btn5_Click(System.Object,System.EventArgs)">
+	<summary>
+ Texts Copy
+ </summary>
+	<param name="tsd"></param>
+	<param name="tea"></param>
+	<remarks></remarks>
+</member><member name="P:XXOP71_Base64Tools.My.Resources.Resources.ResourceManager">
+	<summary>
+  이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+</summary>
+</member><member name="P:XXOP71_Base64Tools.My.Resources.Resources.Culture">
+	<summary>
+  이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대한 현재 스레드의 CurrentUICulture
+  속성을 재정의합니다.
+</summary>
+</member><member name="T:XXOP71_Base64Tools.My.Resources.Resources">
+	<summary>
+  지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+</summary>
+</member>
+</members>
+</doc>
