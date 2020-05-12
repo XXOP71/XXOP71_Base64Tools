@@ -8,3 +8,13 @@ E:\04_vs10__\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Release\XXOP71_Base64
 E:\04_vs10__\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Release\XXOP71_Base64Tools.exe
 E:\04_vs10__\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Release\XXOP71_Base64Tools.xml
 E:\04_vs10__\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Release\XXOP71_Base64Tools.pdb
+E:\61_GitHubGate\XXOP71_Base64Tools\Release\XXOP71_Base64Tools.exe.config
+E:\61_GitHubGate\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Release\XXOP71_Base64Tools.exe
+E:\61_GitHubGate\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Release\XXOP71_Base64Tools.xml
+E:\61_GitHubGate\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Release\XXOP71_Base64Tools.pdb
+E:\61_GitHubGate\XXOP71_Base64Tools\Release\XXOP71_Base64Tools.exe
+E:\61_GitHubGate\XXOP71_Base64Tools\Release\XXOP71_Base64Tools.pdb
+E:\61_GitHubGate\XXOP71_Base64Tools\Release\XXOP71_Base64Tools.xml
+E:\61_GitHubGate\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Release\XXOP71_Base64Tools.CFrmRoot.resources
+E:\61_GitHubGate\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Release\XXOP71_Base64Tools.Resources.resources
+E:\61_GitHubGate\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Release\XXOP71_Base64Tools.vbproj.GenerateResource.Cache

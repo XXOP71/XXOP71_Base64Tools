@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' 어셈블리 특성 값을 검토합니다.
 
-<Assembly: AssemblyTitle("XXOP71_FileRenamer")> 
+<Assembly: AssemblyTitle("XXOP71_Base64Tools")> 
 <Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("XXOP71_FileRenamer")> 
+<Assembly: AssemblyProduct("XXOP71_Base64Tools")> 
 <Assembly: AssemblyCopyright("Copyright ©  2020")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
 
 '이 프로젝트가 COM에 노출되는 경우 다음 GUID는 typelib의 ID를 나타냅니다.
-<Assembly: Guid("0b4b301d-a5c0-477f-8149-e89dd876297e")> 
+<Assembly: Guid("5507a53e-4c5e-46bc-83fa-50f4402c0ef7")> 
 
 ' 어셈블리의 버전 정보는 다음 네 가지 값으로 구성됩니다.
 '
