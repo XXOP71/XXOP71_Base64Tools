@@ -8,8 +8,6 @@ Imports System.Windows.Forms
 Imports System.Linq
 Imports System.Xml.Linq
 Imports System.Text
-Imports System.Runtime.InteropServices
-
 
 
 
@@ -37,7 +35,6 @@ Public NotInheritable Class CFrmRoot
 
         Me.Text = String.Format("{0}  {1}", Me.GetType().Namespace, _strVer)
         ppResetWindowPosition(Me)
-        'ppSubSetting()
     End Sub
 
 
@@ -99,7 +96,6 @@ Public NotInheritable Class CFrmRoot
         Try
             _txb1.Clear()
             _txb2.Clear()
-            Clipboard.Clear()
         Catch
         End Try
     End Sub
@@ -134,104 +130,66 @@ Public NotInheritable Class CFrmRoot
 
 
 
+    'Private Sub ppKeyDown(tsd As Object, tkea As KeyEventArgs) Handles MyBase.KeyDown
+    '    If tkea.Control Then
+    '        If tkea.KeyCode = Keys.V Then
+    '            pp_btn4_Click(Nothing, Nothing)
+    '        ElseIf tkea.KeyCode = Keys.C Then
+    '            pp_btn5_Click(Nothing, Nothing)
+    '        ElseIf tkea.KeyCode = Keys.E Then
+    '            pp_btn1_Click(Nothing, Nothing)
+    '        ElseIf tkea.KeyCode = Keys.D Then
+    '            pp_btn2_Click(Nothing, Nothing)
+    '        ElseIf tkea.KeyCode = Keys.Q Then
+    '            pp_btn3_Click(Nothing, Nothing)
+    '        End If
+    '    End If
+    'End Sub
 
 
-
-
-    Private Const _pllpath_User32 As String = "User32.dll"
-
-    Public Enum EKeyModfs As Integer
-        None = 0
-        Alt = 1
-        Control = 2
-        Shift = 4
-        Windows = 8
-    End Enum
-
-
-    Private Const WM_HOTKEY As Integer = &H312
-
-    Private Enum _Ehkids As Integer
-        CtrlV = 695201
-        CtrlC = 695202
-        CtrlE = 695203
-        CtrlD = 695204
-        CtrlQ = 695205
-    End Enum
-
-
-    <DllImport(_pllpath_User32, EntryPoint:="RegisterHotKey", CharSet:=CharSet.Auto)> _
-    Private Shared Function ppRegisterHotKey( _
-        hWnd As IntPtr, id As Integer, fsModifiers As EKeyModfs, vk As Keys) As Integer
+    ''' <summary>
+    ''' Shortcuts
+    ''' </summary>
+    ''' <param name="tmsg"></param>
+    ''' <param name="tkd"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Overrides Function ProcessCmdKey(ByRef tmsg As Message, tkd As Keys) As Boolean
+        If (tkd = (Keys.Control Or Keys.V)) Then
+            pp_btn4_Click(Nothing, Nothing)
+            Return True
+        ElseIf (tkd = (Keys.Control Or Keys.C)) Then
+            pp_btn5_Click(Nothing, Nothing)
+            Return True
+        ElseIf (tkd = (Keys.Control Or Keys.E)) Then
+            pp_btn1_Click(Nothing, Nothing)
+            Return True
+        ElseIf (tkd = (Keys.Control Or Keys.D)) Then
+            pp_btn2_Click(Nothing, Nothing)
+            Return True
+        ElseIf (tkd = (Keys.Control Or Keys.Q)) Then
+            pp_btn3_Click(Nothing, Nothing)
+            Return True
+        End If
+        Return MyBase.ProcessCmdKey(tmsg, tkd)
     End Function
 
-    <DllImport(_pllpath_User32, EntryPoint:="UnregisterHotKey", CharSet:=CharSet.Auto)> _
-    Private Shared Function ppUnregisterHotKey( _
-        hWnd As IntPtr, id As Integer) As Integer
-    End Function
+    'Protected Overrides Sub OnPreviewKeyDown(e As System.Windows.Forms.PreviewKeyDownEventArgs)
+    '    'MsgBox("OnPreviewKeyDown")
+    '    MyBase.OnPreviewKeyDown(e)
+    '    MsgBox("~~")
+    'End Sub
 
-
-    Protected Overrides Sub WndProc(ByRef tmsg As Message)
-        If (tmsg.Msg = WM_HOTKEY) Then
-            ppGetChange(tmsg)
-        End If
-        MyBase.WndProc(tmsg)
-    End Sub
-
-    Private Sub ppGetChange(ByRef tmsg As Message)
-        If (Me.WindowState = FormWindowState.Normal) AndAlso Me.ContainsFocus Then
-            Dim twpv As Integer = tmsg.WParam.ToInt32()
-
-            Select Case twpv
-                Case _Ehkids.CtrlV
-                    'MsgBox("CtrlV")
-                    pp_btn4_Click(Nothing, Nothing)
-
-                Case _Ehkids.CtrlC
-                    'MsgBox("CtrlC")
-                    pp_btn5_Click(Nothing, Nothing)
-
-                Case _Ehkids.CtrlE
-                    'MsgBox("CtrlE")
-                    pp_btn1_Click(Nothing, Nothing)
-
-                Case _Ehkids.CtrlD
-                    'MsgBox("CtrlD")
-                    pp_btn2_Click(Nothing, Nothing)
-
-                Case _Ehkids.CtrlQ
-                    'MsgBox("CtrlQ")
-                    pp_btn3_Click(Nothing, Nothing)
-
-            End Select
-        End If
-    End Sub
-
-    Protected Overrides Sub OnDeactivate(tea As EventArgs)
-        ppSubSetting(False)
-        MyBase.OnDeactivate(tea)
-    End Sub
-
-    Protected Overrides Sub OnActivated(tea As EventArgs)
-        ppSubSetting(True)
-        MyBase.OnActivated(tea)
-    End Sub
-
-
-    Private Sub ppSubSetting(tbx As Boolean)
-        If tbx Then
-            ppRegisterHotKey(Me.Handle, _Ehkids.CtrlV, EKeyModfs.Control, Keys.V)
-            ppRegisterHotKey(Me.Handle, _Ehkids.CtrlC, EKeyModfs.Control, Keys.C)
-            ppRegisterHotKey(Me.Handle, _Ehkids.CtrlE, EKeyModfs.Control, Keys.E)
-            ppRegisterHotKey(Me.Handle, _Ehkids.CtrlD, EKeyModfs.Control, Keys.D)
-            ppRegisterHotKey(Me.Handle, _Ehkids.CtrlQ, EKeyModfs.Control, Keys.Q)
-        Else
-            ppUnregisterHotKey(Me.Handle, _Ehkids.CtrlV)
-            ppUnregisterHotKey(Me.Handle, _Ehkids.CtrlC)
-            ppUnregisterHotKey(Me.Handle, _Ehkids.CtrlE)
-            ppUnregisterHotKey(Me.Handle, _Ehkids.CtrlD)
-            ppUnregisterHotKey(Me.Handle, _Ehkids.CtrlQ)
-        End If
-    End Sub
+    'Protected Overrides Sub OnKeyDown(tkea As KeyEventArgs)
+    '    'MsgBox("OnKeyDown")
+    '    'Trace.WriteLine(">>> " & tkea.Control)
+    '    'Trace.WriteLine(">>> " & tkea.KeyCode)
+    '    If tkea.Control Then
+    '        If tkea.KeyCode = Keys.E Then
+    '            MsgBox("~~")
+    '        End If
+    '    End If
+    '    MyBase.OnKeyDown(tkea)
+    'End Sub
 
 End Class

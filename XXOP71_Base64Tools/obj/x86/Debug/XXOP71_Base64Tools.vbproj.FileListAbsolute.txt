@@ -18,3 +18,13 @@ E:\61_GitHubGate\XXOP71_Base64Tools\Debug\XXOP71_Base64Tools.xml
 E:\61_GitHubGate\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Debug\XXOP71_Base64Tools.CFrmRoot.resources
 E:\61_GitHubGate\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Debug\XXOP71_Base64Tools.Resources.resources
 E:\61_GitHubGate\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Debug\XXOP71_Base64Tools.vbproj.GenerateResource.Cache
+E:\G01_GitHub_XXOP71\XXOP71_Base64Tools\Debug\XXOP71_Base64Tools.exe.config
+E:\G01_GitHub_XXOP71\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Debug\XXOP71_Base64Tools.exe
+E:\G01_GitHub_XXOP71\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Debug\XXOP71_Base64Tools.xml
+E:\G01_GitHub_XXOP71\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Debug\XXOP71_Base64Tools.pdb
+E:\G01_GitHub_XXOP71\XXOP71_Base64Tools\Debug\XXOP71_Base64Tools.exe
+E:\G01_GitHub_XXOP71\XXOP71_Base64Tools\Debug\XXOP71_Base64Tools.pdb
+E:\G01_GitHub_XXOP71\XXOP71_Base64Tools\Debug\XXOP71_Base64Tools.xml
+E:\G01_GitHub_XXOP71\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Debug\XXOP71_Base64Tools.CFrmRoot.resources
+E:\G01_GitHub_XXOP71\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Debug\XXOP71_Base64Tools.Resources.resources
+E:\G01_GitHub_XXOP71\XXOP71_Base64Tools\XXOP71_Base64Tools\obj\x86\Debug\XXOP71_Base64Tools.vbproj.GenerateResource.Cache

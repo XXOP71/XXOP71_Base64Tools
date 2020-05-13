@@ -37,7 +37,7 @@ Public NotInheritable Class CFrmRoot
 
         Me.Text = String.Format("{0}  {1}", Me.GetType().Namespace, _strVer)
         ppResetWindowPosition(Me)
-        'ppSubSetting()
+        ppSubSetting()
     End Sub
 
 
@@ -97,9 +97,11 @@ Public NotInheritable Class CFrmRoot
     ''' <remarks></remarks>
     Private Sub pp_btn3_Click(tsd As Object, tea As EventArgs) Handles _btn3.Click
         Try
+            Dim tx = Me
+            Debug.WriteLine(String.Format(">>> {0}", Me.ContainsFocus))
+
             _txb1.Clear()
             _txb2.Clear()
-            Clipboard.Clear()
         Catch
         End Try
     End Sub
@@ -148,6 +150,9 @@ Public NotInheritable Class CFrmRoot
         Windows = 8
     End Enum
 
+    'Public Enum EWms As Integer
+    '    HotKey = &H312
+    'End Enum
 
     Private Const WM_HOTKEY As Integer = &H312
 
@@ -165,16 +170,10 @@ Public NotInheritable Class CFrmRoot
         hWnd As IntPtr, id As Integer, fsModifiers As EKeyModfs, vk As Keys) As Integer
     End Function
 
-    <DllImport(_pllpath_User32, EntryPoint:="UnregisterHotKey", CharSet:=CharSet.Auto)> _
-    Private Shared Function ppUnregisterHotKey( _
-        hWnd As IntPtr, id As Integer) As Integer
-    End Function
-
-
     Protected Overrides Sub WndProc(ByRef tmsg As Message)
-        If (tmsg.Msg = WM_HOTKEY) Then
-            ppGetChange(tmsg)
-        End If
+        'If (tmsg.Msg = WM_HOTKEY) Then
+        '    'ppGetChange(tmsg)
+        'End If
         MyBase.WndProc(tmsg)
     End Sub
 
@@ -184,54 +183,28 @@ Public NotInheritable Class CFrmRoot
 
             Select Case twpv
                 Case _Ehkids.CtrlV
-                    'MsgBox("CtrlV")
-                    pp_btn4_Click(Nothing, Nothing)
+                    MsgBox("_Ehkids.CtrlV")
 
-                Case _Ehkids.CtrlC
-                    'MsgBox("CtrlC")
-                    pp_btn5_Click(Nothing, Nothing)
-
-                Case _Ehkids.CtrlE
-                    'MsgBox("CtrlE")
-                    pp_btn1_Click(Nothing, Nothing)
-
-                Case _Ehkids.CtrlD
-                    'MsgBox("CtrlD")
-                    pp_btn2_Click(Nothing, Nothing)
-
-                Case _Ehkids.CtrlQ
-                    'MsgBox("CtrlQ")
-                    pp_btn3_Click(Nothing, Nothing)
+                    'pp_btn1_Click(Nothing, Nothing)
 
             End Select
+
+            'If twp = _Ehkids.CtrlC Then
+            '    MsgBox(">>> ")
+            '    'Dim tx As Integer = tmsg.Msg Or Keys.A
+            '    'MsgBox(String.Format("Hotkey가 눌려짐 {0}", tmsg.WParam.ToInt32()))
+            '    'MsgBox(String.Format(">>> {0}, {1}", tmsg.Msg, CType(EWms.HotKey, Integer)))
+            '    'MsgBox(String.Format(">>> {0}", tx))
+            'End If
         End If
     End Sub
 
-    Protected Overrides Sub OnDeactivate(tea As EventArgs)
-        ppSubSetting(False)
-        MyBase.OnDeactivate(tea)
-    End Sub
-
-    Protected Overrides Sub OnActivated(tea As EventArgs)
-        ppSubSetting(True)
-        MyBase.OnActivated(tea)
-    End Sub
-
-
-    Private Sub ppSubSetting(tbx As Boolean)
-        If tbx Then
-            ppRegisterHotKey(Me.Handle, _Ehkids.CtrlV, EKeyModfs.Control, Keys.V)
-            ppRegisterHotKey(Me.Handle, _Ehkids.CtrlC, EKeyModfs.Control, Keys.C)
-            ppRegisterHotKey(Me.Handle, _Ehkids.CtrlE, EKeyModfs.Control, Keys.E)
-            ppRegisterHotKey(Me.Handle, _Ehkids.CtrlD, EKeyModfs.Control, Keys.D)
-            ppRegisterHotKey(Me.Handle, _Ehkids.CtrlQ, EKeyModfs.Control, Keys.Q)
-        Else
-            ppUnregisterHotKey(Me.Handle, _Ehkids.CtrlV)
-            ppUnregisterHotKey(Me.Handle, _Ehkids.CtrlC)
-            ppUnregisterHotKey(Me.Handle, _Ehkids.CtrlE)
-            ppUnregisterHotKey(Me.Handle, _Ehkids.CtrlD)
-            ppUnregisterHotKey(Me.Handle, _Ehkids.CtrlQ)
-        End If
+    Private Sub ppSubSetting()
+        'ppRegisterHotKey(Me.Handle, _Ehkids.CtrlV, EKeyModfs.Control, Keys.V)
+        'ppRegisterHotKey(Me.Handle, _Ehkids.CtrlC, EKeyModfs.Control, Keys.C)
+        'ppRegisterHotKey(Me.Handle, _Ehkids.CtrlE, EKeyModfs.Control, Keys.E)
+        'ppRegisterHotKey(Me.Handle, _Ehkids.CtrlD, EKeyModfs.Control, Keys.D)
+        'ppRegisterHotKey(Me.Handle, _Ehkids.CtrlQ, EKeyModfs.Control, Keys.Q)
     End Sub
 
 End Class

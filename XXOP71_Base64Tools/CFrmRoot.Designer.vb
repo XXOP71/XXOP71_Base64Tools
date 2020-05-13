@@ -25,10 +25,10 @@ Partial Class CFrmRoot
         Me._btn2 = New System.Windows.Forms.Button()
         Me._txb1 = New System.Windows.Forms.TextBox()
         Me._btn1 = New System.Windows.Forms.Button()
-        Me._txb2 = New System.Windows.Forms.TextBox()
         Me._btn3 = New System.Windows.Forms.Button()
         Me._btn4 = New System.Windows.Forms.Button()
         Me._btn5 = New System.Windows.Forms.Button()
+        Me._txb2 = New XXOP71_Base64Tools.CTxbA()
         Me.SuspendLayout()
         '
         '_btn2
@@ -59,17 +59,6 @@ Partial Class CFrmRoot
         Me._btn1.Text = "▼▼▼ Encoding (CTRL+E)"
         Me._btn1.UseVisualStyleBackColor = True
         '
-        '_txb2
-        '
-        Me._txb2.Location = New System.Drawing.Point(12, 197)
-        Me._txb2.Multiline = True
-        Me._txb2.Name = "_txb2"
-        Me._txb2.ReadOnly = True
-        Me._txb2.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me._txb2.Size = New System.Drawing.Size(736, 150)
-        Me._txb2.TabIndex = 3
-        Me._txb2.WordWrap = False
-        '
         '_btn3
         '
         Me._btn3.Location = New System.Drawing.Point(628, 353)
@@ -96,6 +85,17 @@ Partial Class CFrmRoot
         Me._btn5.TabIndex = 6
         Me._btn5.Text = "Copy (CTRL+C)"
         Me._btn5.UseVisualStyleBackColor = True
+        '
+        '_txb2
+        '
+        Me._txb2.Location = New System.Drawing.Point(12, 197)
+        Me._txb2.Multiline = True
+        Me._txb2.Name = "_txb2"
+        Me._txb2.ReadOnly = True
+        Me._txb2.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me._txb2.Size = New System.Drawing.Size(736, 150)
+        Me._txb2.TabIndex = 3
+        Me._txb2.WordWrap = False
         '
         'CFrmRoot
         '
@@ -124,7 +124,7 @@ Partial Class CFrmRoot
     Friend WithEvents _btn2 As System.Windows.Forms.Button
     Friend WithEvents _txb1 As System.Windows.Forms.TextBox
     Friend WithEvents _btn1 As System.Windows.Forms.Button
-    Friend WithEvents _txb2 As System.Windows.Forms.TextBox
+    Friend WithEvents _txb2 As CTxbA
     Friend WithEvents _btn3 As System.Windows.Forms.Button
     Friend WithEvents _btn4 As System.Windows.Forms.Button
     Friend WithEvents _btn5 As System.Windows.Forms.Button
